@@ -5,7 +5,6 @@
         <script type="text/javascript">
             (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking".split(" "), 0);
                 branch.init('key_live_diIgmYsg6xUw4ggK7YN0ZpmjvxgOf0b8');
-
         </script>
     </head>
     <body>
@@ -19,12 +18,12 @@
     <option value="4">4</option>
   </select>
   <br><br>
-  <button id="button1">deep link</button>
+  <button id="button1">deep link 1</button>
     <a id="anchor1" href="#">deep link</a>
  <!-- <input type="submit"> -->
 </form>
-    <script type="text/javascript">
-        var linkData = {
+<script type="text/javascript">
+  var linkData = {
   campaign: 'content 123',
   channel: 'facebook',
   feature: 'dashboard',
@@ -49,7 +48,27 @@ branch.link(linkData, function(err, link) {
   document.getElementById('anchor1').href = link || err;
 });
     </script>
-    <a id="anchor2" href="/page2.html">page2</a>
+
+    <script type="text/javascript">
+      branch.init('key_live_diIgmYsg6xUw4ggK7YN0ZpmjvxgOf0b8', function(err, data) {
+  console.log(err, data); 
+
+});
+    branch.data(function(err, readData) {
+  console.log(err, data); 
+
+});
+
+branch.link(readData, function(err, link) {
+  // bind elements
+  document.getElementById('button2').onclick = function() {
+    window.open(link || err);
+  };
+  document.getElementById('anchor2').href = link || err;
+});
+    </script>
+
+    <a id="anchor3" href="/page2.html">page2</a>
     </body>
 
 </html>

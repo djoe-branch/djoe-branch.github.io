@@ -4,7 +4,7 @@
     <head>
         <script type="text/javascript">
             (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking".split(" "), 0);
-                branch.init('key_live_diIgmYsg6xUw4ggK7YN0ZpmjvxgOf0b8');
+                branch.init('key_live_diIgmYsg6xUw4ggK7YN0ZpmjvxgOf0b8',options,callback(err,data);
         </script>
     </head>
     <body>
@@ -26,6 +26,9 @@
  <!-- <input type="submit"> -->
 </form>
 <script type="text/javascript">
+
+console.log(err, data);
+
   var linkData = {
   campaign: 'content 123',
   channel: 'facebook',
@@ -50,8 +53,7 @@ branch.link(linkData, function(err, link) {
   };
   document.getElementById('anchor1').href = link || err;
 });
-
-var readData;
+/*
 branch.data(function(err, readData) {
   console.log(err, readData); 
 });
@@ -63,6 +65,7 @@ branch.link(readData, function(err, link) {
   };
   document.getElementById('anchor2').href = link || err;
 });
+*/
     </script>
 
     <a id="anchor3" href="/page2.html">page2</a>

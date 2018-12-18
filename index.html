@@ -47,8 +47,10 @@ branch.link(linkData, function(err, link) {
   };
   document.getElementById('anchor1').href = link || err;
 });
+
+var readData;
 branch.data(function(err, readData) {
-  console.log(err, data); 
+  console.log(err, readData); 
 });
 
 branch.link(readData, function(err, link) {

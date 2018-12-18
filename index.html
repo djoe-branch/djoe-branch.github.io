@@ -57,9 +57,9 @@ branch.link(linkData, function(err, link) {
 });
 
 
-var linkData2 = branch.first(function(err,data) {console.log(err,data);
+branch.first(function(err,data) {console.log(err,data);
 });
-
+/*
 branch.link(linkData2, function(err, link) {
   // bind elements
   document.getElementById('button2').onclick = function() {
@@ -67,7 +67,7 @@ branch.link(linkData2, function(err, link) {
   };
   document.getElementById('anchor2').href = link || err;
 });
-
+*/
     </script>
 
     <a id="anchor3" href="/page2.html">page2</a>

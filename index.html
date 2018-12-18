@@ -47,16 +47,8 @@ branch.link(linkData, function(err, link) {
   };
   document.getElementById('anchor1').href = link || err;
 });
-    </script>
-
-    <script type="text/javascript">
-      branch.init('key_live_diIgmYsg6xUw4ggK7YN0ZpmjvxgOf0b8', function(err, data) {
+branch.data(function(err, readData) {
   console.log(err, data); 
-
-});
-    branch.data(function(err, readData) {
-  console.log(err, data); 
-
 });
 
 branch.link(readData, function(err, link) {

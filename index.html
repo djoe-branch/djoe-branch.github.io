@@ -63,6 +63,10 @@ branch.link(linkData, function(err, link) {
   };
   document.getElementById('anchor1').href = link || err;
 });
+
+branch.data(function(err,data) {
+  console.log(err,data);
+});
     </script>
 
     <a id="anchor3" href="/page2.html">page2</a>

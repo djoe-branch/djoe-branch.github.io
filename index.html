@@ -8,12 +8,13 @@
             branch.init('key_live_diIgmYsg6xUw4ggK7YN0ZpmjvxgOf0b8', function(err,data) {
               console.log(err,data);
             });
-            var newLink = branch.link(data, function(err, link));
-            var a = document.createElement('a');
-            var linkText = document.createTextNode("the link");
-            a.appendChild(linkText);
-            a.href = newLink;
-            document.body.appendChild(a);
+            var newLink = branch.link(data, function(err, link) {;
+              var a = document.createElement('a');
+              var linkText = document.createTextNode("the link");
+              a.appendChild(linkText);
+              a.href = newLink;
+              document.body.appendChild(a);
+            });
         </script>
     </head>
     <body>

@@ -14,7 +14,9 @@
               var a = document.createElement('a');
               var linkText = document.createTextNode("the link");
               a.appendChild(linkText);
+              a.title = "The Link";
               a.href = newLink;
+
               document.body.appendChild(a);
             });
         </script>

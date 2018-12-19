@@ -66,6 +66,13 @@ branch.link(linkData, function(err, link) {
 
 branch.data(function(err,data) {
   console.log(err,data);
+  branch.link(data, function(err, link) {
+  // bind elements
+  document.getElementById('button2').onclick = function() {
+    window.open(link || err);
+  };
+  document.getElementById('anchor2').href = link || err;
+  });
 });
     </script>
 

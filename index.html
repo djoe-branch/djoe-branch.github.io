@@ -4,18 +4,19 @@
 <html>
     <head>
         <script type="text/javascript">
-          var payload;
+//          var payload;
             (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking".split(" "), 0);
             branch.init('key_live_diIgmYsg6xUw4ggK7YN0ZpmjvxgOf0b8', function(err,data) {
               console.log(err,data);
-              payload = data;
+              // payload = data;
             });
-            branch.link(payload, function(err, link) {
+/*            branch.link(payload, function(err, link) {
               console.log(link);
               a = document.createElement('a')
               a.href = link;
               document.getElementById('anchor2').appendChild(a);
             });
+*/            
         </script>
     </head>
     <body>
@@ -33,7 +34,7 @@
     <a id="anchor1" href="#">deep link</a>
   <br><br>
   <button id="button2">deep link 2</button>
-    <a id="anchor2">deep link 2</a>
+    <a id="anchor2" href='#'>deep link 2</a>
  <!-- <input type="submit"> -->
 </form>
 <script type="text/javascript">

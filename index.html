@@ -82,8 +82,8 @@ branch.link({}, function(err, link) {
 
 branch.data(function(err, data) {
   console.log(err, data); 
-  var dataObj = JSON.parse(data);
-  var nextLink = dataObj.referring_link + "?__branch_flow_type=viewapp";
+//  var dataObj = JSON.parse(data);
+  var nextLink = data.referring_link + "?__branch_flow_type=viewapp";
   document.getElementById('button4').onclick = function() {
     window.open(nextLink || err);
   };

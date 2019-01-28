@@ -83,11 +83,11 @@ branch.link({}, function(err, link) {
   document.getElementById('anchor3').href = link || err;
 });
 
+linkData['$do_not_process'] = "true";
 branch.link(linkData, function(err, link) {
   document.getElementById('button4').onclick = function() {
     window.open(link || err);
   };
-  linkData['$do_not_process'] = "true";
   document.getElementById('anchor4').href = link || err;
 });
 

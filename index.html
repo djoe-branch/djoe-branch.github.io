@@ -39,6 +39,9 @@
   <br><br>
   <button id="button4">deep link 5</button>
     <a id="anchor5" href='#'>Referrer link with branch flow type param added</a>
+  <br><br>
+  <button id="button4">deep link 5</button>
+    <a id="anchor5" href='#'>Referrer link with branch flow type param added and do not process</a>
  <!-- <input type="submit"> -->
 </form>
 <script type="text/javascript">
@@ -118,6 +121,16 @@ branch.data(function(err, data) {
     window.open(nextLink || err);
   };
   document.getElementById('anchor5').href = nextLink || err;
+});
+
+branch.data(function(err, data) {
+  console.log(err, data); 
+//  var dataObj = JSON.parse(data);
+  var nextLink = data.referring_link + "&__branch_flow_type=viewapp&do_not_process=true";
+  document.getElementById('button6').onclick = function() {
+    window.open(nextLink || err);
+  };
+  document.getElementById('anchor6').href = nextLink || err;
 });
 
 

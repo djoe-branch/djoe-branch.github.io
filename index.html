@@ -140,9 +140,16 @@ branch.data(function(err, data) {
     nextLink = nextLink + "&landing=true";
   document.getElementById('anchor8').href = nextLink || err;
 });
+var listener = function(event, data) { console.log(event, data); }
 
+// Specify an event to listen for
+//branch.addListener('willShowJourney', listener);
 
+// Listen for all events
+branch.addListener(listener);
 
+//branch.closeJourney(function(err) { console.log(err); });
+//branch.track('pageview');
 
     </script>
     <br><br><br>

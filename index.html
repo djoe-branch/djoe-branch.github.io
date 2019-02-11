@@ -43,9 +43,14 @@
     <a id="anchor6" href='#'>Referrer link with branch flow type param added and new key/value</a>
   <br><br>
   <button id="button7">deep link 7</button>
-    <a id="anchor7" href='#'>Referrer link with branch flow type param added and do not process</a>
+    <a id="anchor7" href='#'>Referrer link with branch flow type param added and do_not_process</a>
     <br>
-    <a id="anchor8" href='#'>Referrer link with branch flow type param added and do not process and new key/value</a>
+    <a id="anchor8" href='#'>Referrer link with branch flow type param added and do_not_process and new key/value</a>
+  <br><br>
+  <button id="button9">deep link 9</button>
+    <a id="anchor9" href='#'>Referrer link with branch flow type param added and deeplink_no_attribution</a>
+    <br>
+    <a id="anchor10" href='#'>Referrer link with branch flow type param added and deeplink_no_attribution and new key/value</a>
  <!-- <input type="submit"> -->
 </form>
 <script type="text/javascript">
@@ -140,6 +145,19 @@ branch.data(function(err, data) {
     nextLink = nextLink + "&landing=true";
   document.getElementById('anchor8').href = nextLink || err;
 });
+
+branch.data(function(err, data) {
+  console.log(err, data); 
+//  var dataObj = JSON.parse(data);
+  var nextLink = data.data_parsed["~referring_link"] + "&__branch_flow_type=viewapp&$deeplink_no_attribution=true";
+  document.getElementById('button9').onclick = function() {
+    window.open(nextLink || err);
+  };
+  document.getElementById('anchor9').href = nextLink || err;
+    nextLink = nextLink + "&landing=true";
+  document.getElementById('anchor10').href = nextLink || err;
+});
+
 var listener = function(event, data) { console.log(event, data); }
 
 // Specify an event to listen for

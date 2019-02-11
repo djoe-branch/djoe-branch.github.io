@@ -125,7 +125,7 @@ branch.link(linkData2, function(err, link) {
 branch.data(function(err, data) {
   console.log(err, data); 
 //  var dataObj = JSON.parse(data);
-  var nextLink = data.data_parsed["~referring_link"] + "&__branch_flow_type=viewapp";
+  var nextLink = data.data_parsed["~referring_link"] + "?__branch_flow_type=viewapp";
   document.getElementById('button5').onclick = function() {
     window.open(nextLink || err);
   };
@@ -137,7 +137,7 @@ branch.data(function(err, data) {
 branch.data(function(err, data) {
   console.log(err, data); 
 //  var dataObj = JSON.parse(data);
-  var nextLink = data.data_parsed["~referring_link"] + "&__branch_flow_type=viewapp&$do_not_process=true";
+  var nextLink = data.data_parsed["~referring_link"] + "?__branch_flow_type=viewapp&$do_not_process=true";
   document.getElementById('button7').onclick = function() {
     window.open(nextLink || err);
   };
@@ -149,7 +149,7 @@ branch.data(function(err, data) {
 branch.data(function(err, data) {
   console.log(err, data); 
 //  var dataObj = JSON.parse(data);
-  var nextLink = data.data_parsed["~referring_link"] + "&__branch_flow_type=viewapp&$deeplink_no_attribution=true";
+  var nextLink = data.data_parsed["~referring_link"] + "?__branch_flow_type=viewapp&$deeplink_no_attribution=true";
   document.getElementById('button9').onclick = function() {
     window.open(nextLink || err);
   };
@@ -171,7 +171,7 @@ branch.addListener(listener);
 
     </script>
     <br><br><br>
-    <a id="anchor4" href="/page2.html">page2</a>
+    <a id="anchor4" href="morepages/page2.html">page2</a>
     </body>
 
 </html>

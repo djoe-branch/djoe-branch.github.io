@@ -44,6 +44,9 @@
   <button id="button4">deep link 4</button>
     <a id="anchor4" href='#'>New deep link with new payload and with do not process param added </a>
   <br><br>
+  <button id="button11">deep link 11</button>
+    <a id="anchor11" href='#'>Referrer link with keys key1='newData' and key2='newData'</a>
+  <br><br>
   <button id="button5">deep link 5</button>
     <a id="anchor5" href='#'>Referrer link with branch flow type param added</a>
     <br>
@@ -163,6 +166,16 @@ branch.data(function(err, data) {
   document.getElementById('anchor9').href = nextLink || err;
     nextLink = nextLink + "&monster_name=deeplink_no_attribution";
   document.getElementById('anchor10').href = nextLink || err;
+});
+
+branch.data(function(err, data) {
+  console.log(err, data); 
+//  var dataObj = JSON.parse(data);
+  var nextLink = data.data_parsed["~referring_link"] + "?key1=newData&key2=newData";
+  document.getElementById('button11').onclick = function() {
+    window.open(nextLink || err);
+  };
+  document.getElementById('anchor11').href = nextLink || err;
 });
 
 var listener = function(event, data) { console.log(event, data); }

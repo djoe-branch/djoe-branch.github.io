@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<meta name="branch:deeplink:page" content="indexadobe" />
+<html>
+    <head>
+        <script type="text/javascript">
+            (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking".split(" "), 0);
+//              branch.init('key_live_diIgmYsg6xUw4ggK7YN0ZpmjvxgOf0b8', {'make_new_link' : true
+
+
+             branch.init('key_live_diIgmYsg6xUw4ggK7YN0ZpmjvxgOf0b8', function(err,data) {
+              console.log(err,data);
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Hello Visitor</h1>
+        <p>This is Derrick's Adobe Test Page Landing</p>
+        <form>
+
+  <br><br>
+    <button id="button1">deep link 1</button>
+    <a id="anchor1" href='#'>New deep link with copied link dictionary from referrer - lightroom</a>
+  <br><br>
+</form>
+<script type="text/javascript">
+
+  var linkData = {
+  campaign: 'content 123',
+  channel: 'facebook',
+  feature: 'dashboard',
+  stage: 'new user',
+  tags: [ 'tag1', 'tag2', 'tag3' ],
+  alias: '',
+  data: {
+    'custom_bool': true,
+    'custom_int': Date.now(),
+    'custom_string': 'hello',
+    '$og_title': 'Title',
+    '$og_description': 'Description',
+    '$og_image_url':'http://lorempixel.com/400/400'
+  }
+};
+
+branch.data(function(err,data) {
+  //var linkData = {};
+
+  //linkData.push({"~campaign":data.data_parsed["~campaign"],"~feature":data.data_parsed["~feature"],"~source":data.data_parsed["~source"],"~tags":data.data_parsed["~tags"]});
+
+  var longLink = "https://lightroom.app.link/e/?" 
+    + "~campaign=" + data.data_parsed["~campaign"] 
+    + "&~feature=" + data.data_parsed["~feature"]
+    + "&~source=" + data.data_parsed["~source"]
+    + "&~tags=" + data.data_parsed["~tags"];
+
+  longLink = longLink + "&$fallback_url=https%3A%2F%2Fdjoe-branch.github.io%2Fadobelr.html";
+  document.getElementById('anchor1').href = longLink || err;
+}
+
+/*
+branch.data(function(err,data) {
+  console.log(err,data);
+  branch.link(data, function(err, link) {
+    document.getElementById('button1').onclick = function() {
+      window.open(link || err);
+    };
+    document.getElementById('anchor1').href = link || err;
+  });
+});
+*/
+    </script>
+    </body>
+
+</html>

@@ -54,7 +54,7 @@ branch.data(function(err,data) {
     + "&~source=" + data.data_parsed["~source"]
     + "&~tags=" + data.data_parsed["~tags"];
 
-  longLink = longLink + "&$fallback_url=https%3A%2F%2Fdjoe-branch.github.io%2Fadobelr.html";
+  longLink = longLink + "&$ios_url=https%3A%2F%2Fdjoe-branch.github.io%2Fadobelr.html";
   document.getElementById('anchor1').href = longLink || err;
 });
 

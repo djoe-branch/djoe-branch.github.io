@@ -48,6 +48,7 @@ branch.data(function(err,data) {
   //linkData.push({"~campaign":data.data_parsed["~campaign"],"~feature":data.data_parsed["~feature"],"~source":data.data_parsed["~source"],"~tags":data.data_parsed["~tags"]});
 
   var longLink = "https://lightroom.app.link/e/?" 
+    + "$web_only=true"
     + "~campaign=" + data.data_parsed["~campaign"] 
     + "&~feature=" + data.data_parsed["~feature"]
     + "&~source=" + data.data_parsed["~source"]

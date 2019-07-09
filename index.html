@@ -28,7 +28,13 @@
                         alert("Sorry, something went wrong.");
                     }
                     else {
+                        branch.logEvent(
+                        "clicked SMS button",
+                          { metadata: '123' },
+                          function(err) { console.log(err); }
+);
                         alert("SMS sent!");
+
                     }
                 };
                 branch.sendSMS(phone, linkData, options, callback);

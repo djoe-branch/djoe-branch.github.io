@@ -16,7 +16,8 @@
                 var phone = form.phone.value;
                 var linkData = {
                     tags: [],
-                    channel: 'Website',
+                    campaign: 'Organic SMS'
+                    channel: 'web',
                     feature: 'TextMeTheApp',
                     data: {
                         'foo': 'bar'
@@ -28,11 +29,6 @@
                         alert("Sorry, something went wrong.");
                     }
                     else {
-                        branch.logEvent(
-                        "clicked SMS button",
-                          { metadata: '123' },
-                          function(err) { console.log(err); }
-);
                         alert("SMS sent!");
 
                     }
@@ -90,6 +86,10 @@
     <a id="anchor9" href='#'>Referrer link with branch flow type param added and deeplink_no_attribution</a>
     <br>
     <a id="anchor10" href='#'>Referrer link with branch flow type param added and deeplink_no_attribution and new key/value</a>
+      <br><br>
+  <button id="buttonIos">Download iOS</button>
+    <br><br>
+  <button id="buttonAndroid">Download Android</button>
  <!-- <input type="submit"> -->
 </form>
 <script type="text/javascript">
@@ -207,6 +207,41 @@ branch.data(function(err, data) {
   document.getElementById('anchor11').href = nextLink || err;
 });
 
+var linkDataIos = {
+  campaign: 'install app',
+  channel: 'website',
+  feature: 'install cta ios',
+  tags: [ 'ios' ],
+  alias: '',
+  data: {
+  }
+};
+
+branch.link(linkDataIos, function(err, link) {
+    document.getElementById('buttonIos').onclick = function() {
+    window.open(link || err);
+  };
+  console.log(link);
+});
+
+var linkDataAndroid = {
+  campaign: 'install app',
+  channel: 'website',
+  feature: 'install cta Android',
+  tags: [ 'android' ],
+  alias: '',
+  data: {
+  }
+};
+
+branch.link(linkDataAndroid, function(err, link) {
+    document.getElementById('buttonAndroid').onclick = function() {
+    window.open(link || err);
+  };
+  console.log(link);
+});
+
+
 var listener = function(event, data) { console.log(event, data); }
 
 // Specify an event to listen for
@@ -218,10 +253,10 @@ branch.addListener(listener);
 //branch.closeJourney(function(err) { console.log(err); });
 //branch.track('pageview');
 
-document.getElementById('UserAgent').value = navigator.userAgent;
+//document.getElementById('UserAgent').value = navigator.userAgent;
     </script>
 
-    <br><br><br>
+<!--     <br><br><br>
     <a id="anchor4" href="morepages/page2.html">page2</a>
     <br><br><br>
     <a id="newlink" href="https://app.discover.com/R9M0c5JVdV">discoverlink</a>
@@ -233,7 +268,7 @@ document.getElementById('UserAgent').value = navigator.userAgent;
     <a id="something1" href="adobelightroom:///learn/tutorial/6764e697-07c0-4148-bf4a-27d85537a0e9?link_click_id=link-657245211160155702">link 1</a>
       <br><br>
     <a id="something2" href="adobelightroom://learn/tutorial/6764e697-07c0-4148-bf4a-27d85537a0e9?link_click_id=link-657245211160155702">link 2</a>
-
+ -->
       Send SMS
       <form onsubmit="sendSMS(this); return false;">
           <input id="phone" name="phone" type="tel" placeholder="(650) 123-4567" />

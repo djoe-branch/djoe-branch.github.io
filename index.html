@@ -214,7 +214,7 @@
       }
     };
 
-    branch.link(linkDataIos, function(err, link) {
+    branch.link(linkDataIos, {make_new_link:false}, function(err, link) {
       document.getElementById('buttonIos').onclick = function() {
         window.open(link || err);
       };
@@ -231,7 +231,7 @@
       }
     };
 
-    branch.link(linkDataAndroid, function(err, link) {
+    branch.link(linkDataAndroid, {make_new_link:false}, function(err, link) {
       document.getElementById('buttonAndroid').onclick = function() {
         window.open(link || err);
       };
